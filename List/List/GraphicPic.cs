@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Linq;
@@ -72,6 +72,24 @@ namespace List
             }
         }
 
+        public bool CommonWith(Figure a, Figure b)
+        {
+            if ((a.upper_bound_X == b.upper_bound_X && a.upper_bound_Y == b.upper_bound_Y) ||
+                (a.lower_bound_X == b.lower_bound_X && a.lower_bound_Y == b.lower_bound_Y))
+                return true;
+            return false;
+        }
+
+        public bool HasBiggerSquareThanS(Figure a, double s)
+        {
+            if (a.FigureType != 2)
+            {
+                if (a.Square > s)
+                    return true;
+                return false;
+            }
+            return false;
+        }
         public override string ToString()
         {
             var sb = new StringBuilder();
@@ -133,18 +151,12 @@ namespace List
             if (r.FigureType != 1)
                 throw new ArgumentException("please, insert correct figure!");
             List<Figure> newFigures = new List<Figure>();
-            double[] vertices = r.Vertices;
-            Random rand = new Random();
-            for (int i = 0; i < 4; i++)
+            foreach (var f in figures)
             {
-                int f_code = rand.Next(1, 4);
-                int f_col = rand.Next(1, 10);
-                double x = rand.Next(-10, 10);
-                double y = rand.Next(-10, 10);
-                Figure k1 = new Figure(f_code, f_col, vertices[0], vertices[1], x, y);
-                Figure k2 = new Figure(f_code, f_col, x, y, vertices[2], vertices[3]);
-                newFigures.Add(k1);
-                newFigures.Add(k2);
+                if (f.CommonWith(f, r))
+                {
+                    newFigures.Add(f);
+                }
             }
             GraphicPic newF = new GraphicPic(newFigures); 
             return newF;
@@ -155,24 +167,11 @@ namespace List
             if (s <= 0)
                 throw new ArgumentException("please, insert the correct square num!");
             List<Figure> biggerSq = new List<Figure>();
-            Random rand = new Random();
-            int count = 0;
-            while(count != 6)
+            foreach (var f in figures)
             {
-                int f_code = rand.Next(1, 4);
-                int f_col = rand.Next(1, 10);
-                double x1 = rand.Next(-100, 100);
-                double x2 = rand.Next(-100, 100);
-                double y1 = rand.Next(-100, 100);
-                double y2 = rand.Next(-100, 100);
-                if (f_code != 2)
+                if (f.HasBiggerSquareThanS(f, s))
                 {
-                    Figure k = new Figure(f_code, f_col, x1, y1, x2, y2);
-                    if (k.Square > s)
-                    {
-                        biggerSq.Add(k);
-                        count++;
-                    }
+                    biggerSq.Add(f);
                 }
             }
             GraphicPic bigSq = new GraphicPic(biggerSq);
