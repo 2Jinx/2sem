@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{473164E2-3586-4846-9092-8A73A4C379CE}|Default">
+  <MonoDevelop.Ide.ItemProperties.Yield PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Yield/Program.cs">
+    <Files>
+      <File FileName="Yield/Program.cs" Line="24" Column="43" />
+      <File FileName="Yield/MyClass.cs" Line="8" Column="16" />
+      <File FileName="Yield/ListEnum.cs" Line="34" Column="51" />
+      <File FileName="Yield/SortEnumerator.cs" Line="8" Column="13" />
+      <File FileName="Yield/WordsInText.cs" Line="9" Column="16" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Yield" expanded="True">
+            <Node name="Yield" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

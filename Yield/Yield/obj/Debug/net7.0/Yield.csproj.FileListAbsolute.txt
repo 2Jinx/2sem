@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Yield/Yield/bin/Debug/net7.0/Yield
+/Users/jinx/Projects/Yield/Yield/bin/Debug/net7.0/Yield.deps.json
+/Users/jinx/Projects/Yield/Yield/bin/Debug/net7.0/Yield.runtimeconfig.json
+/Users/jinx/Projects/Yield/Yield/bin/Debug/net7.0/Yield.dll
+/Users/jinx/Projects/Yield/Yield/bin/Debug/net7.0/Yield.pdb
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.AssemblyInfo.cs
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.dll
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/refint/Yield.dll
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.pdb
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/Yield.genruntimeconfig.cache
+/Users/jinx/Projects/Yield/Yield/obj/Debug/net7.0/ref/Yield.dll
