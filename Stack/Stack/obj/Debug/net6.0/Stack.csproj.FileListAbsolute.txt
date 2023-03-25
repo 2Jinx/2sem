@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Stack/Stack/bin/Debug/net6.0/Stack
+/Users/jinx/Projects/Stack/Stack/bin/Debug/net6.0/Stack.deps.json
+/Users/jinx/Projects/Stack/Stack/bin/Debug/net6.0/Stack.runtimeconfig.json
+/Users/jinx/Projects/Stack/Stack/bin/Debug/net6.0/Stack.dll
+/Users/jinx/Projects/Stack/Stack/bin/Debug/net6.0/Stack.pdb
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.AssemblyInfo.cs
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.dll
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/refint/Stack.dll
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.pdb
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/Stack.genruntimeconfig.cache
+/Users/jinx/Projects/Stack/Stack/obj/Debug/net6.0/ref/Stack.dll
