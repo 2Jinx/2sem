@@ -1,0 +1,15 @@
+/Users/jinx/Projects/TreeSort/TreeSort/bin/Debug/net7.0/TreeSort
+/Users/jinx/Projects/TreeSort/TreeSort/bin/Debug/net7.0/TreeSort.deps.json
+/Users/jinx/Projects/TreeSort/TreeSort/bin/Debug/net7.0/TreeSort.runtimeconfig.json
+/Users/jinx/Projects/TreeSort/TreeSort/bin/Debug/net7.0/TreeSort.dll
+/Users/jinx/Projects/TreeSort/TreeSort/bin/Debug/net7.0/TreeSort.pdb
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.csproj.AssemblyReference.cache
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.AssemblyInfoInputs.cache
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.AssemblyInfo.cs
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.dll
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/refint/TreeSort.dll
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.pdb
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/TreeSort.genruntimeconfig.cache
+/Users/jinx/Projects/TreeSort/TreeSort/obj/Debug/net7.0/ref/TreeSort.dll
