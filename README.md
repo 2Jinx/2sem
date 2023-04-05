@@ -3,3 +3,4 @@
 #### Yeld - IEnumerable
 #### Stack - Stack, Queue
 #### TreeSort - семестровая работа по АИСД
+#### Delegate - делегаты
