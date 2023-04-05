@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Delegate/Delegate/bin/Debug/net7.0/Delegate
+/Users/jinx/Projects/Delegate/Delegate/bin/Debug/net7.0/Delegate.deps.json
+/Users/jinx/Projects/Delegate/Delegate/bin/Debug/net7.0/Delegate.runtimeconfig.json
+/Users/jinx/Projects/Delegate/Delegate/bin/Debug/net7.0/Delegate.dll
+/Users/jinx/Projects/Delegate/Delegate/bin/Debug/net7.0/Delegate.pdb
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.AssemblyInfo.cs
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.dll
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/refint/Delegate.dll
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.pdb
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/Delegate.genruntimeconfig.cache
+/Users/jinx/Projects/Delegate/Delegate/obj/Debug/net7.0/ref/Delegate.dll
