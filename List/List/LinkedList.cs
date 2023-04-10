@@ -109,6 +109,10 @@ namespace LinkedList
             while (el != null)
             {
                 sb.Append($" {el.Info.ToString()} ->");
+                if (el.Next == null)
+                {
+                    sb.Append($" {el.Info.ToString()}");
+                }
                 el = el.Next;
             }
             return sb.ToString();
