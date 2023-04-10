@@ -1,5 +1,5 @@
 
-#### List - LinkedList, OrderedList, GraphicPic
+#### List - LinkedList, OrderedList, GraphicPic, CircularLinkedList
 #### Yeld - IEnumerable
 #### Stack - Stack, Queue
 #### TreeSort - семестровая работа по АИСД
