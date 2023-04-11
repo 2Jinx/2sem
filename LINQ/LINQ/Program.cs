@@ -9,20 +9,20 @@ internal class Program
     {
         try
         {
-            Console.WriteLine("Задание 4...\n");
-            Task4();
-            Console.WriteLine("\nЗадание 16...\n");
-            Task16();
-            Console.WriteLine("\n\nЗадание 28...\n");
-            Task28();
-            Console.WriteLine("\n\nЗадание 37...\n");
-            Task37();
-            Console.WriteLine("\n\nЗадание 40...\n");
-            Task40();
+            //Console.WriteLine("Задание 4...\n");
+            //Task4();
+            //Console.WriteLine("\nЗадание 16...\n");
+            //Task16();
+            //Console.WriteLine("\n\nЗадание 28...\n");
+            //Task28();
+            //Console.WriteLine("\n\nЗадание 37...\n");
+            //Task37();
+            //Console.WriteLine("\n\nЗадание 40...\n");
+            //Task40();
             Console.WriteLine("\n\nЗадание 52...\n");
             Task52();
-            //Console.WriteLine("\n\nЗадание 64...\n");
-            //Task64();
+            Console.WriteLine("\n\nЗадание 64...\n");
+            Task64();
         }
         catch(Exception ex)
         {
@@ -199,6 +199,27 @@ internal class Program
             new Exam { Surname = "Суворов", Initsial = "Ф.Н", SchoolNumber = 1, PointExam = "90 20 10" }
         };
 
+
+        var students = exams.GroupBy(x => x.SchoolNumber).Select(x => new
+        {
+            MinPoint = x.Min(x => x.PointExam),
+            MinSumPoints = x.Where(x => x.PointExam == exams.Min(x => x.PointExam))
+            .Select(x => x.PointExam.Split(' ')).SelectMany(x => x)
+            .Select(x => int.Parse(x)).Sum(),
+            Student = x.Where(x => x.PointExam == exams.Min(x => x.PointExam)).Select(x => new {x.Surname, x.Initsial})
+            .OrderBy(x => x.Surname).ThenBy(x => x.Initsial),
+            SchoolNumber = x.Key
+        });
+
+        foreach (var st in students)
+        {
+            Console.WriteLine($"Школа: {st.SchoolNumber}, Минимальный балл: {st.MinSumPoints}");
+            foreach(var s in st.Student)
+            {
+                Console.WriteLine($"Ученик {s.Surname} {s.Initsial}");
+            }
+        }
+        Console.WriteLine("----------------------------");
         var users = from user in exams
                     group user by user.SchoolNumber into eGroup
                     let minSumPoint = eGroup.Min(x => x.PointExam)
@@ -228,48 +249,62 @@ internal class Program
         }
     }
 
-    //public static void Task64()
-    //{
-    //    var list = new List<StudentMarks>
-    //    {
-    //        new StudentMarks {Class = 9, Surname = "Иванов", Initials = "И.И", SubjectName = "Информатика", Mark = 4.8},
-    //        new StudentMarks {Class = 7, Surname = "Петров", Initials = "А.И", SubjectName = "Алгебра", Mark = 3.2},
-    //        new StudentMarks {Class = 9, Surname = "Сидоров", Initials = "Е.И", SubjectName = "Геометрия", Mark = 3.8},
-    //        new StudentMarks {Class = 10, Surname = "Смирнов", Initials = "И.Н", SubjectName = "Геометрия", Mark = 4.7},
-    //        new StudentMarks {Class = 11, Surname = "Гагарин", Initials = "Е.Н", SubjectName = "Информатика", Mark = 4.2},
-    //        new StudentMarks {Class = 9, Surname = "Жуков", Initials = "Ф.И", SubjectName = "Алгебра", Mark = 2.5},
-    //        new StudentMarks {Class = 8, Surname = "Борисов", Initials = "И.К", SubjectName = "Информатика", Mark = 3.8},
-    //        new StudentMarks {Class = 9, Surname = "Дятлов", Initials = "К.Ф", SubjectName = "Геометрия", Mark = 5.0},
-    //        new StudentMarks {Class = 10, Surname = "Васильев", Initials = "Р.А", SubjectName = "Алгебра", Mark = 4.1},
-    //        new StudentMarks {Class = 9, Surname = "Горшков", Initials = "А.Н", SubjectName = "Информатика", Mark = 3.4},
-    //        new StudentMarks {Class = 6, Surname = "Цветков", Initials = "К.З", SubjectName = "Информатика", Mark = 3.8},
-    //        new StudentMarks {Class = 9, Surname = "Сахаров", Initials = "К.Н", SubjectName = "Информатика", Mark = 5.0},
-    //        new StudentMarks {Class = 8, Surname = "Суворов", Initials = "И.Ф", SubjectName = "Геометрия", Mark = 2.7},
-    //        new StudentMarks {Class = 9, Surname = "Никитин", Initials = "С.А", SubjectName = "Информатика", Mark = 5.0},
-    //        new StudentMarks {Class = 11, Surname = "Рябов", Initials = "С.И", SubjectName = "Алгебра", Mark = 3.7},
-    //        new StudentMarks {Class = 9, Surname = "Белов", Initials = "И.С", SubjectName = "Информатика", Mark = 4.5},
-    //        new StudentMarks {Class = 10, Surname = "Соколов", Initials = "И.Р", SubjectName = "Алгебра", Mark = 3.8},
-    //        new StudentMarks {Class = 9, Surname = "Попов", Initials = "Ф.М", SubjectName = "Геометрия", Mark = 5.0},
-    //        new StudentMarks {Class = 8, Surname = "Михайлов", Initials = "Д.И", SubjectName = "Информатика", Mark = 4.7},
-    //        new StudentMarks {Class = 7, Surname = "Федотов", Initials = "И.Д", SubjectName = "Информатика", Mark = 2.6},
-    //    };
+    public static void Task64()
+    {
+        var students = new List<StudentMarks>
+        {
+            new StudentMarks {Class = 9, Surname = "Иванов", Initials = "И.И", SubjectName = "Информатика", Mark = 4.8},
+            new StudentMarks {Class = 7, Surname = "Петров", Initials = "А.И", SubjectName = "Алгебра", Mark = 3.2},
+            new StudentMarks {Class = 9, Surname = "Сидоров", Initials = "Е.И", SubjectName = "Геометрия", Mark = 3.8},
+            new StudentMarks {Class = 10, Surname = "Смирнов", Initials = "И.Н", SubjectName = "Геометрия", Mark = 4.7},
+            new StudentMarks {Class = 11, Surname = "Гагарин", Initials = "Е.Н", SubjectName = "Информатика", Mark = 4.2},
+            new StudentMarks {Class = 9, Surname = "Жуков", Initials = "Ф.И", SubjectName = "Алгебра", Mark = 2.5},
+            new StudentMarks {Class = 8, Surname = "Борисов", Initials = "И.К", SubjectName = "Информатика", Mark = 3.8},
+            new StudentMarks {Class = 9, Surname = "Дятлов", Initials = "К.Ф", SubjectName = "Геометрия", Mark = 5.0},
+            new StudentMarks {Class = 10, Surname = "Васильев", Initials = "Р.А", SubjectName = "Алгебра", Mark = 4.1},
+            new StudentMarks {Class = 9, Surname = "Горшков", Initials = "А.Н", SubjectName = "Информатика", Mark = 3.4},
+            new StudentMarks {Class = 6, Surname = "Цветков", Initials = "К.З", SubjectName = "Информатика", Mark = 3.8},
+            new StudentMarks {Class = 9, Surname = "Сахаров", Initials = "К.Н", SubjectName = "Информатика", Mark = 5.0},
+            new StudentMarks {Class = 8, Surname = "Суворов", Initials = "И.Ф", SubjectName = "Геометрия", Mark = 2.7},
+            new StudentMarks {Class = 9, Surname = "Никитин", Initials = "С.А", SubjectName = "Информатика", Mark = 5.0},
+            new StudentMarks {Class = 11, Surname = "Рябов", Initials = "С.И", SubjectName = "Алгебра", Mark = 3.7},
+            new StudentMarks {Class = 9, Surname = "Белов", Initials = "И.С", SubjectName = "Информатика", Mark = 4.5},
+            new StudentMarks {Class = 10, Surname = "Соколов", Initials = "И.Р", SubjectName = "Алгебра", Mark = 3.8},
+            new StudentMarks {Class = 9, Surname = "Попов", Initials = "Ф.М", SubjectName = "Геометрия", Mark = 5.0},
+            new StudentMarks {Class = 8, Surname = "Михайлов", Initials = "Д.И", SubjectName = "Информатика", Mark = 4.7},
+            new StudentMarks {Class = 7, Surname = "Федотов", Initials = "И.Д", SubjectName = "Информатика", Mark = 2.6},
+        };
 
-    //    var st = from students in list
-    //              group students by students.SubjectName into eGroup
-    //              let count = eGroup.Where(x => x.SubjectName == "Информатика").Count()
-    //              let mark = eGroup.Where(x => x.SubjectName == "Информатика").Sum(x => x.Mark)
-    //              select new
-    //              {
-    //                  Number = eGroup.Key,
-    //                  Insial = eGroup.Where(x => x.Mark >= 4.0)
-    //              };
-    //    foreach (var item in st)
-    //    {
-    //        foreach (var student in item.Insial.OrderBy(x => x.Class))
-    //        {
-    //            Console.WriteLine($"Класс: {student.Class}, Учащийся: {student.Surname} {student.Initials}, " +
-    //                $"Средняя оценка по информатике : {student.Mark} ");
-    //        }
-    //    }
-    //}
+        var student = students.GroupBy(x => x.SubjectName).Select(x => new
+        {
+            Count = x.Where(x => x.SubjectName == "Информатика").Count(),
+            Student = x.Where(x => x.Mark >= 4.0)
+        });
+
+        foreach(var st in student.OrderBy(x => x.Count))
+        {
+            foreach(var s in st.Student.OrderBy(x => x.Class))
+            {
+                Console.WriteLine($"Класс: {s.Class}, Учащийся: {s.Surname} {s.Initials}, " +
+                    $"Средняя оценка по информатике : {s.Mark} ");
+            }
+        }
+        //var st = from students in list
+        //         group students by students.SubjectName into eGroup
+        //         let count = eGroup.Where(x => x.SubjectName == "Информатика").Count()
+        //         let mark = eGroup.Where(x => x.SubjectName == "Информатика").Sum(x => x.Mark)
+        //         select new
+        //         {
+        //             Number = eGroup.Key,
+        //             Insial = eGroup.Where(x => x.Mark >= 4.0)
+        //         };
+        //foreach (var item in st)
+        //{
+        //    foreach (var student in item.Insial.OrderBy(x => x.Class))
+        //    {
+        //        Console.WriteLine($"Класс: {student.Class}, Учащийся: {student.Surname} {student.Initials}, " +
+        //            $"Средняя оценка по информатике : {student.Mark} ");
+        //    }
+        //}
+    }
 }
