@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
+
 namespace LINQ;
 
 internal class Program
@@ -30,25 +32,22 @@ internal class Program
 
     public static void Task4()
     {
-        var list = new List<Client>()
+        var clients = new List<Client>()
         {
             new Client { Code = 1, WorkingHours = 10, Month = 1, Year = 2004 },
             new Client { Code = 1, WorkingHours = 20, Month = 3, Year = 2004 },
-            new Client { Code = 2, WorkingHours = 10, Month = 4, Year = 2005 },
+            new Client { Code = 3, WorkingHours = 10, Month = 4, Year = 2005 },
             new Client { Code = 2, WorkingHours = 20, Month = 4, Year = 2005 },
             new Client { Code = 3, WorkingHours = 1, Month = 5, Year = 2002 },
         };
 
-        var year = from item in list
-                   group item by item.Code into eGroup
-                   let time = eGroup.Sum(x => x.WorkingHours)
-                   orderby time descending, eGroup.Key ascending
-                   select new
-                   {
-                       Time = time,
-                       Code = eGroup.Key,
-                   };
-        foreach (var item in year)
+        var year = clients.GroupBy(x => x.Code).Select(x => new
+        {
+            Time = x.Sum(x => x.WorkingHours),
+            Code = x.Key
+        });
+
+        foreach (var item in year.OrderBy(x => x.Code).ThenBy(x => -x.Time))
         {
             Console.WriteLine($"{item.Code}, {item.Time}");
         }
@@ -56,31 +55,30 @@ internal class Program
 
     public static void Task16()
     {
-        var list = new List<Abiturient>
+        var abiturients = new List<Abiturient>
         {
             new Abiturient{Year = 2003, Surname = "Иванов", SchoolNumber = 18},
             new Abiturient{Year = 2001, Surname = "Петров", SchoolNumber = 32},
             new Abiturient{Year = 2000, Surname = "Сидоров", SchoolNumber = 61},
-            new Abiturient{Year = 2001, Surname = "Смиронов", SchoolNumber = 11},
+            new Abiturient{Year = 2002, Surname = "Смиронов", SchoolNumber = 11},
             new Abiturient{Year = 2002, Surname = "Васильев", SchoolNumber = 112},
         };
 
-        var abiturients = from user in list
-                         group user by user.Year into eGroup
-                         let countAbiuturient = eGroup.Count()
-                         let info = eGroup.First()
-                         orderby countAbiuturient descending, eGroup.Key ascending
-                         select new { Year = eGroup.Key, Count = countAbiuturient };
-
-        foreach (var item in abiturients)
+        var abiturient = abiturients.GroupBy(x => x.Year).Select(x => new
         {
-            Console.WriteLine($"Абитуриенты: {item.Count} | Год: {item.Year}");
+            CountAbiturient = x.Count(),
+            Year = x.Key
+        });
+
+        foreach (var item in abiturient.OrderBy(x => -x.CountAbiturient).ThenBy(x => x.Year))
+        {
+            Console.WriteLine($"Абитуриенты: {item.CountAbiturient} | Год: {item.Year}");
         }
     }
 
     public static void Task28()
     {
-        var list = new List<Debtor>
+        var debtors = new List<Debtor>
         {
             new Debtor{Surname = "Иванов", FlatNumber = 1, Duty = 10.25},
             new Debtor{Surname = "Петров", FlatNumber = 5, Duty = 0},
@@ -105,28 +103,23 @@ internal class Program
             new Debtor{Surname = "Цветков", FlatNumber = 26, Duty = 2624.09},
             new Debtor{Surname = "Федотов", FlatNumber = 33, Duty = 3413.98},
         };
-        
-        var users = from user in list
-                    let ground = (user.FlatNumber - 1) / 4 + 1
-                    group user by ground into eGroup
-                    let ground = eGroup.Key
-                    select new
-                    {
-                        Count = eGroup.Count(x => x.Duty > 0),
-                        Ground = ground,
-                        Cost = eGroup.Where(x => x.Duty >= 0).Sum(x => x.Duty)
-                    };
-        var peoples = users.OrderBy(x => x.Ground);
 
-        foreach (var item in peoples)
+        var debtor = debtors.GroupBy(x => (x.FlatNumber - 1) / 4 + 1).Select(x => new
         {
-            Console.WriteLine($"Кол-во должников: {item.Count} | Этаж: {item.Ground} | Задолжность: {item.Cost:F2}");
+            Ground = x.Key,
+            Count = x.Count(x => x.Duty > 0),
+            Cost = x.Where(x => x.Duty >= 0).Sum(x => x.Duty)
+        });
+
+        foreach (var d in debtor.OrderBy(x => x.Ground))
+        {
+            Console.WriteLine($"Кол-во должников: {d.Count} | Этаж: {d.Ground} | Задолжность: {d.Cost:F2}");
         }
     }
 
     public static void Task37()
     {
-        var list = new List<GasStation>
+        var gasStations = new List<GasStation>
         {
             new GasStation{CostOfOneLiter = 46,BrandOfGasoline = 92, Company = "Татнефть", Street = "Пушкина"},
             new GasStation{CostOfOneLiter = 40,BrandOfGasoline = 98, Company = "Татнефть", Street = "Арбузова"},
@@ -136,32 +129,28 @@ internal class Program
             new GasStation{CostOfOneLiter = 50,BrandOfGasoline = 92, Company = "Ирбис", Street = "Маяковского"},
         };
 
-        var gas = from gasoline in list
-                    group gasoline by gasoline.BrandOfGasoline into eGroup
-                    let station = eGroup.Where(x => x.BrandOfGasoline > 0).Count()
-                    let min = eGroup.Where(x => x.BrandOfGasoline > 0).Min(x => x.CostOfOneLiter)
-                    let max = eGroup.Where(x => x.BrandOfGasoline > 0).Max(x => x.CostOfOneLiter)
-                    orderby station, -eGroup.Key
-                    select new
-                    {
-                        Number = eGroup.Key,
-                        Max = max,
-                        Min = min
-                    };
-        foreach (var item in gas)
+        var gas = gasStations.GroupBy(x => x.BrandOfGasoline).Select(x => new
         {
-            Console.WriteLine($"Марка: {item.Number} | {item.Max} {item.Min}");
+            Station = x.Where(x => x.BrandOfGasoline > 0).Count(),
+            Min = x.Where(x => x.BrandOfGasoline > 0).Min(x => x.CostOfOneLiter),
+            Max = x.Where(x => x.BrandOfGasoline > 0).Max(x => x.CostOfOneLiter),
+            Number = x.Key
+        });
+
+        foreach (var g in gas.OrderBy(x => x.Station).ThenBy(x => -x.Number))
+        {
+            Console.WriteLine($"Марка: {g.Number} | {g.Max} {g.Min}");
         }
     }
 
     public static void Task40()
     {
-        var list = new List<GasStation>
+        var gasStations = new List<GasStation>
         {
             new GasStation{CostOfOneLiter = 46,BrandOfGasoline = 92, Company = "Татнефть", Street = "Пушкина"},
             new GasStation{CostOfOneLiter = 67,BrandOfGasoline = 98, Company = "Татнефть", Street = "Арбузова"},
             new GasStation{CostOfOneLiter = 60,BrandOfGasoline = 95, Company = "Лукойл", Street = "Кошаева"},
-            new GasStation{CostOfOneLiter = 90,BrandOfGasoline = 98, Company = "Ирбис", Street = "Первая парковая"},
+            new GasStation{CostOfOneLiter = 90,BrandOfGasoline = 98, Company = "Ирбис", Street = "Парковая"},
             new GasStation{CostOfOneLiter = 30,BrandOfGasoline = 95, Company = "Лукойл", Street = "Московская"},
             new GasStation{CostOfOneLiter = 50,BrandOfGasoline = 92, Company = "Ирбис", Street = "Маяковского"},
             new GasStation{CostOfOneLiter = 46,BrandOfGasoline = 92, Company = "Татнефть", Street = "Огарева"},
@@ -173,34 +162,33 @@ internal class Program
             new GasStation{CostOfOneLiter = 46,BrandOfGasoline = 92, Company = "Татнефть", Street = "Пушкина"},
             new GasStation{CostOfOneLiter = 58,BrandOfGasoline = 98, Company = "Ирбис", Street = "Арбузова"},
             new GasStation{CostOfOneLiter = 60,BrandOfGasoline = 95, Company = "Лукойл", Street = "Кошаева"},
-            new GasStation{CostOfOneLiter = 90,BrandOfGasoline = 98, Company = "Ирбис", Street = "Первая парковая"},
+            new GasStation{CostOfOneLiter = 90,BrandOfGasoline = 98, Company = "Ирбис", Street = "Парковая"},
             new GasStation{CostOfOneLiter = 30,BrandOfGasoline = 95, Company = "Лукойл", Street = "Московская"},
             new GasStation{CostOfOneLiter = 50,BrandOfGasoline = 92, Company = "Ирбис", Street = "Маяковского"},
         };
 
-        var gas = from gasoline in list
-                  group gasoline by gasoline.Street into eGroup
-                  let station = eGroup.Where(x => x.BrandOfGasoline > 0).Count()
-                  let count92 = eGroup.Where(x => x.BrandOfGasoline == 92).Count()
-                  let count95 = eGroup.Where(x => x.BrandOfGasoline == 95).Count()
-                  let count98 = eGroup.Where(x => x.BrandOfGasoline == 98).Count()
-                  orderby station, eGroup.Key
-                  select new
-                  {
-                      Number = eGroup.Key,
-                      Count92 = count92,
-                      Count95 = count95,
-                      Count98 = count98
-                  };
-        foreach (var item in gas)
+        var gas = gasStations.GroupBy(x => x.Street).Select(x => new
         {
-            Console.WriteLine($"Улица: {item.Number} | {item.Count92} {item.Count95} {item.Count98}");
+            Station = x.Where(x => x.BrandOfGasoline > 0).Count(),
+            Count92 = x.Where(x => x.BrandOfGasoline == 92).Count(),
+            Count95 = x.Where(x => x.BrandOfGasoline == 95).Count(),
+            Count98 = x.Where(x => x.BrandOfGasoline == 98).Count(),
+            Number = x.Key
+        });
+
+        Console.Write("         ----------------------------------    \n");
+        Console.WriteLine("            Улица       |  92 |  95 |  98 |      ");
+        Console.Write("         ---------------|-----|-----|-----|    \n");
+        foreach (var g in gas)
+        {
+            Console.WriteLine($"\t    {g.Number}\t|  {g.Count92}  |  {g.Count95}  |  {g.Count98}  |");
         }
+        Console.Write("         ----------------------------------    \n");
     }
 
     public static void Task52()
     {
-        var list = new List<Exam>
+        var exams = new List<Exam>
         {
             new Exam{Surname = "Иванов", Initsial = "А.И", SchoolNumber = 1, PointExam = "91 90 99"},
             new Exam { Surname = "Петров", Initsial = "В.С", SchoolNumber = 2, PointExam = "59 64 63" },
@@ -211,7 +199,7 @@ internal class Program
             new Exam { Surname = "Суворов", Initsial = "Ф.Н", SchoolNumber = 1, PointExam = "90 20 10" }
         };
 
-        var users = from user in list
+        var users = from user in exams
                     group user by user.SchoolNumber into eGroup
                     let minSumPoint = eGroup.Min(x => x.PointExam)
                     let minPoint = eGroup
