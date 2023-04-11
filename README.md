@@ -1,7 +1,7 @@
 
 #### List - LinkedList, OrderedLinkedList, GraphicPic, CircularLinkedList
-#### Yeld - IEnumerable
-#### Stack - Stack, Queue
+#### Yeld - реализация IEnumerable
+#### Stack - реализация Stack и Queue
 #### TreeSort - семестровая работа по АИСД
-#### Delegate - делегаты
+#### Delegate - задачи на делегаты
 #### LINQ - задачи по LINQ
