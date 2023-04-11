@@ -1,0 +1,15 @@
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.csproj.AssemblyReference.cache
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.AssemblyInfoInputs.cache
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.AssemblyInfo.cs
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/bin/Debug/net6.0/TaskManagement_App
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/bin/Debug/net6.0/TaskManagement_App.deps.json
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/bin/Debug/net6.0/TaskManagement_App.runtimeconfig.json
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/bin/Debug/net6.0/TaskManagement_App.dll
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/bin/Debug/net6.0/TaskManagement_App.pdb
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.dll
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/refint/TaskManagement_App.dll
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.pdb
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/TaskManagement_App.genruntimeconfig.cache
+/Users/jinx/Projects/TaskManagement_App/TaskManagement_App/obj/Debug/net6.0/ref/TaskManagement_App.dll
