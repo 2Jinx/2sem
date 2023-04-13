@@ -9,7 +9,7 @@ internal class Program
     {
         try
         {
-            Console.WriteLine("Задание 4...\n");
+            Console.WriteLine("Задание 4...\n"); 
             Task4();
             Console.WriteLine("\nЗадание 16...\n");
             Task16();
