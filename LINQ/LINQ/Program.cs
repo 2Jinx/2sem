@@ -9,16 +9,16 @@ internal class Program
     {
         try
         {
-            //Console.WriteLine("Задание 4...\n");
-            //Task4();
-            //Console.WriteLine("\nЗадание 16...\n");
-            //Task16();
-            //Console.WriteLine("\n\nЗадание 28...\n");
-            //Task28();
-            //Console.WriteLine("\n\nЗадание 37...\n");
-            //Task37();
-            //Console.WriteLine("\n\nЗадание 40...\n");
-            //Task40();
+            Console.WriteLine("Задание 4...\n");
+            Task4();
+            Console.WriteLine("\nЗадание 16...\n");
+            Task16();
+            Console.WriteLine("\n\nЗадание 28...\n");
+            Task28();
+            Console.WriteLine("\n\nЗадание 37...\n");
+            Task37();
+            Console.WriteLine("\n\nЗадание 40...\n");
+            Task40();
             Console.WriteLine("\n\nЗадание 52...\n");
             Task52();
             Console.WriteLine("\n\nЗадание 64...\n");
@@ -46,11 +46,15 @@ internal class Program
             Time = x.Sum(x => x.WorkingHours),
             Code = x.Key
         });
-
+        Console.Write("      ---------------------------------------------------    \n");
+        Console.WriteLine("\tСуммарная продолжительность    |   Код клиента\t|");
+        Console.WriteLine("\t           часов   \t       |\t        |");
+        Console.Write("      ---------------------------------------------------    \n");
         foreach (var item in year.OrderBy(x => x.Code).ThenBy(x => -x.Time))
         {
-            Console.WriteLine($"{item.Code}, {item.Time}");
+            Console.WriteLine($"\t\t    {item.Time} \t\t       |        {item.Code}\t|");
         }
+        Console.Write("      ---------------------------------------------------    \n");
     }
 
     public static void Task16()
@@ -69,11 +73,14 @@ internal class Program
             CountAbiturient = x.Count(),
             Year = x.Key
         });
-
+        Console.Write("      -------------------------------------------    \n");
+        Console.WriteLine("\tКол-во абитуриентов\t|\tГод\t|");
+        Console.Write("      -------------------------------------------    \n");
         foreach (var item in abiturient.OrderBy(x => -x.CountAbiturient).ThenBy(x => x.Year))
         {
-            Console.WriteLine($"Абитуриенты: {item.CountAbiturient} | Год: {item.Year}");
+            Console.WriteLine($"\t         {item.CountAbiturient}\t\t|\t{item.Year}\t|");
         }
+        Console.Write("      -------------------------------------------    \n");
     }
 
     public static void Task28()
@@ -110,11 +117,14 @@ internal class Program
             Count = x.Count(x => x.Duty > 0),
             Cost = x.Where(x => x.Duty >= 0).Sum(x => x.Duty)
         });
-
+        Console.Write("      ---------------------------------------------------    \n");
+        Console.WriteLine("\tКол-во должников    |\tЭтаж\t|  Задолжность\t|");
+        Console.Write("      ---------------------------------------------------    \n");
         foreach (var d in debtor.OrderBy(x => x.Ground))
         {
-            Console.WriteLine($"Кол-во должников: {d.Count} | Этаж: {d.Ground} | Задолжность: {d.Cost:F2}");
+            Console.WriteLine($"\t       {d.Count}\t    |\t {d.Ground}\t|    {d.Cost:F2}\t|");
         }
+        Console.Write("      ---------------------------------------------------    \n");
     }
 
     public static void Task37()
@@ -136,11 +146,15 @@ internal class Program
             Max = x.Where(x => x.BrandOfGasoline > 0).Max(x => x.CostOfOneLiter),
             Number = x.Key
         });
-
+        Console.Write("      -----------------------------------------------------    \n");
+        Console.WriteLine("\t Марка\t|      Максимальная   \t|   Минимальная   |");
+        Console.WriteLine("\t\t|          цена\t\t|       цена\t  |");
+        Console.Write("      -----------------------------------------------------    \n");
         foreach (var g in gas.OrderBy(x => x.Station).ThenBy(x => -x.Number))
         {
-            Console.WriteLine($"Марка: {g.Number} | {g.Max} {g.Min}");
+            Console.WriteLine($"\t  {g.Number} \t|\t    {g.Max}\t\t|\t {g.Min}\t  |");
         }
+        Console.Write("      -----------------------------------------------------    \n");
     }
 
     public static void Task40()
@@ -199,112 +213,108 @@ internal class Program
             new Exam { Surname = "Суворов", Initsial = "Ф.Н", SchoolNumber = 1, PointExam = "90 20 10" }
         };
 
-
         var students = exams.GroupBy(x => x.SchoolNumber).Select(x => new
         {
-            MinPoint = x.Min(x => x.PointExam),
-            MinSumPoints = x.Where(x => x.PointExam == exams.Min(x => x.PointExam))
-            .Select(x => x.PointExam.Split(' ')).SelectMany(x => x)
-            .Select(x => int.Parse(x)).Sum(),
-            Student = x.Where(x => x.PointExam == exams.Min(x => x.PointExam)).Select(x => new {x.Surname, x.Initsial})
-            .OrderBy(x => x.Surname).ThenBy(x => x.Initsial),
+            MinPoints = x.Min(x => x.PointExam),
+            Student = x.Select(x => new { x.Surname, x.Initsial, x.PointExam}).OrderBy(x => x.Surname)
+            .ThenBy(x => x.Initsial),
             SchoolNumber = x.Key
         });
-
-        foreach (var st in students)
+        Console.Write("      --------------------------------------------------------    \n");
+        Console.WriteLine("\tШкола\t  |\tМинимальный балл     |     Ученик    |");
+        Console.Write("      --------------------------------------------------------    \n");
+        foreach (var st in students.OrderBy(x => -x.SchoolNumber))
         {
-            Console.WriteLine($"Школа: {st.SchoolNumber}, Минимальный балл: {st.MinSumPoints}");
-            foreach(var s in st.Student)
+            Console.Write($"\t  {st.SchoolNumber}\t  |\t    {st.MinPoints}\t     |");
+            foreach (var item in st.Student.Where(x => x.PointExam == st.MinPoints))
             {
-                Console.WriteLine($"Ученик {s.Surname} {s.Initsial}");
+                Console.Write($"\t{item.Surname} {item.Initsial}\t|\n");
             }
         }
-        Console.WriteLine("----------------------------");
-        var users = from user in exams
-                    group user by user.SchoolNumber into eGroup
-                    let minSumPoint = eGroup.Min(x => x.PointExam)
-                    let minPoint = eGroup
-                    .Where(x => x.PointExam == minSumPoint)
-                    .Select(x => x.PointExam.Split(' '))
-                    .SelectMany(x => x)
-                    .Select(x => int.Parse(x))
-                    .Sum()
-                    select new
-                    {
-                        NumberSchool = eGroup.Key,
-                        Insial = eGroup
-                        .Where(x => x.PointExam == minSumPoint)
-                        .Select(x => new { x.Surname, x.Initsial })
-                        .OrderBy(x => x.Surname).ThenBy(x => x.Initsial),
-                        SumPoint = minPoint
-                    };
-
-        foreach (var user in users)
-        {
-            Console.WriteLine($"Школа: {user.NumberSchool}, Минимальный балл: {user.SumPoint}");
-            foreach (var item in user.Insial)
-            {
-                Console.WriteLine($"Ученик: {item.Surname} {item.Initsial}");
-            }
-        }
+        Console.Write("      --------------------------------------------------------    \n");
     }
 
     public static void Task64()
     {
-        var students = new List<StudentMarks>
+        var marks = new List<StudentMarks>
         {
-            new StudentMarks {Class = 9, Surname = "Иванов", Initials = "И.И", SubjectName = "Информатика", Mark = 4.8},
-            new StudentMarks {Class = 7, Surname = "Петров", Initials = "А.И", SubjectName = "Алгебра", Mark = 3.2},
-            new StudentMarks {Class = 9, Surname = "Сидоров", Initials = "Е.И", SubjectName = "Геометрия", Mark = 3.8},
-            new StudentMarks {Class = 10, Surname = "Смирнов", Initials = "И.Н", SubjectName = "Геометрия", Mark = 4.7},
-            new StudentMarks {Class = 11, Surname = "Гагарин", Initials = "Е.Н", SubjectName = "Информатика", Mark = 4.2},
-            new StudentMarks {Class = 9, Surname = "Жуков", Initials = "Ф.И", SubjectName = "Алгебра", Mark = 2.5},
-            new StudentMarks {Class = 8, Surname = "Борисов", Initials = "И.К", SubjectName = "Информатика", Mark = 3.8},
-            new StudentMarks {Class = 9, Surname = "Дятлов", Initials = "К.Ф", SubjectName = "Геометрия", Mark = 5.0},
-            new StudentMarks {Class = 10, Surname = "Васильев", Initials = "Р.А", SubjectName = "Алгебра", Mark = 4.1},
-            new StudentMarks {Class = 9, Surname = "Горшков", Initials = "А.Н", SubjectName = "Информатика", Mark = 3.4},
-            new StudentMarks {Class = 6, Surname = "Цветков", Initials = "К.З", SubjectName = "Информатика", Mark = 3.8},
-            new StudentMarks {Class = 9, Surname = "Сахаров", Initials = "К.Н", SubjectName = "Информатика", Mark = 5.0},
-            new StudentMarks {Class = 8, Surname = "Суворов", Initials = "И.Ф", SubjectName = "Геометрия", Mark = 2.7},
-            new StudentMarks {Class = 9, Surname = "Никитин", Initials = "С.А", SubjectName = "Информатика", Mark = 5.0},
-            new StudentMarks {Class = 11, Surname = "Рябов", Initials = "С.И", SubjectName = "Алгебра", Mark = 3.7},
-            new StudentMarks {Class = 9, Surname = "Белов", Initials = "И.С", SubjectName = "Информатика", Mark = 4.5},
-            new StudentMarks {Class = 10, Surname = "Соколов", Initials = "И.Р", SubjectName = "Алгебра", Mark = 3.8},
-            new StudentMarks {Class = 9, Surname = "Попов", Initials = "Ф.М", SubjectName = "Геометрия", Mark = 5.0},
-            new StudentMarks {Class = 8, Surname = "Михайлов", Initials = "Д.И", SubjectName = "Информатика", Mark = 4.7},
-            new StudentMarks {Class = 7, Surname = "Федотов", Initials = "И.Д", SubjectName = "Информатика", Mark = 2.6},
+            new StudentMarks {Class = 9, Surname = "Иванов", Initials = "И.И", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 7, Surname = "Петров", Initials = "А.И", SubjectName = "Алгебра", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Сидоров", Initials = "Е.И", SubjectName = "Геометрия", Mark = 3},
+            new StudentMarks {Class = 10, Surname = "Смирнов", Initials = "И.Н", SubjectName = "Геометрия", Mark = 4},
+            new StudentMarks {Class = 11, Surname = "Гагарин", Initials = "Е.Н", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 9, Surname = "Жуков", Initials = "Ф.И", SubjectName = "Алгебра", Mark = 2},
+            new StudentMarks {Class = 8, Surname = "Борисов", Initials = "И.К", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Дятлов", Initials = "К.Ф", SubjectName = "Геометрия", Mark = 5},
+            new StudentMarks {Class = 10, Surname = "Васильев", Initials = "Р.А", SubjectName = "Алгебра", Mark = 4},
+            new StudentMarks {Class = 9, Surname = "Горшков", Initials = "А.Н", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 6, Surname = "Цветков", Initials = "К.З", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Сахаров", Initials = "К.Н", SubjectName = "Информатика", Mark = 5},
+            new StudentMarks {Class = 8, Surname = "Суворов", Initials = "И.Ф", SubjectName = "Геометрия", Mark = 2},
+            new StudentMarks {Class = 9, Surname = "Никитин", Initials = "С.А", SubjectName = "Информатика", Mark = 5},
+            new StudentMarks {Class = 11, Surname = "Рябов", Initials = "С.И", SubjectName = "Алгебра", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Белов", Initials = "И.С", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 10, Surname = "Соколов", Initials = "И.Р", SubjectName = "Алгебра", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Попов", Initials = "Ф.М", SubjectName = "Геометрия", Mark = 5},
+            new StudentMarks {Class = 7, Surname = "Федотов", Initials = "И.Д", SubjectName = "Информатика", Mark = 2},
+
+            new StudentMarks {Class = 9, Surname = "Иванов", Initials = "И.И", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 7, Surname = "Петров", Initials = "А.И", SubjectName = "Алгебра", Mark = 4},
+            new StudentMarks {Class = 9, Surname = "Сидоров", Initials = "Е.И", SubjectName = "Геометрия", Mark = 2},
+            new StudentMarks {Class = 10, Surname = "Смирнов", Initials = "И.Н", SubjectName = "Геометрия", Mark = 5},
+            new StudentMarks {Class = 11, Surname = "Гагарин", Initials = "Е.Н", SubjectName = "Информатика", Mark = 5},
+            new StudentMarks {Class = 9, Surname = "Жуков", Initials = "Ф.И", SubjectName = "Алгебра", Mark = 3},
+            new StudentMarks {Class = 8, Surname = "Борисов", Initials = "И.К", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Дятлов", Initials = "К.Ф", SubjectName = "Геометрия", Mark = 4},
+            new StudentMarks {Class = 10, Surname = "Васильев", Initials = "Р.А", SubjectName = "Алгебра", Mark = 5},
+            new StudentMarks {Class = 9, Surname = "Горшков", Initials = "А.Н", SubjectName = "Информатика", Mark = 2},
+            new StudentMarks {Class = 6, Surname = "Цветков", Initials = "К.З", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Сахаров", Initials = "К.Н", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 8, Surname = "Суворов", Initials = "И.Ф", SubjectName = "Геометрия", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Никитин", Initials = "С.А", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 11, Surname = "Рябов", Initials = "С.И", SubjectName = "Алгебра", Mark = 4},
+            new StudentMarks {Class = 9, Surname = "Белов", Initials = "И.С", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 10, Surname = "Соколов", Initials = "И.Р", SubjectName = "Алгебра", Mark = 5},
+            new StudentMarks {Class = 9, Surname = "Попов", Initials = "Ф.М", SubjectName = "Геометрия", Mark = 2},
+            new StudentMarks {Class = 7, Surname = "Федотов", Initials = "И.Д", SubjectName = "Информатика", Mark = 4},
+
+            new StudentMarks {Class = 9, Surname = "Иванов", Initials = "И.И", SubjectName = "Информатика", Mark = 5},
+            new StudentMarks {Class = 7, Surname = "Петров", Initials = "А.И", SubjectName = "Алгебра", Mark = 2},
+            new StudentMarks {Class = 9, Surname = "Сидоров", Initials = "Е.И", SubjectName = "Геометрия", Mark = 4},
+            new StudentMarks {Class = 10, Surname = "Смирнов", Initials = "И.Н", SubjectName = "Геометрия", Mark = 3},
+            new StudentMarks {Class = 11, Surname = "Гагарин", Initials = "Е.Н", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 9, Surname = "Жуков", Initials = "Ф.И", SubjectName = "Алгебра", Mark = 5},
+            new StudentMarks {Class = 8, Surname = "Борисов", Initials = "И.К", SubjectName = "Информатика", Mark = 4},
+            new StudentMarks {Class = 9, Surname = "Дятлов", Initials = "К.Ф", SubjectName = "Геометрия", Mark = 2},
+            new StudentMarks {Class = 10, Surname = "Васильев", Initials = "Р.А", SubjectName = "Алгебра", Mark = 3},
+            new StudentMarks {Class = 9, Surname = "Горшков", Initials = "А.Н", SubjectName = "Информатика", Mark = 5},
+            new StudentMarks {Class = 6, Surname = "Цветков", Initials = "К.З", SubjectName = "Информатика", Mark = 5},
+            new StudentMarks {Class = 9, Surname = "Сахаров", Initials = "К.Н", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 8, Surname = "Суворов", Initials = "И.Ф", SubjectName = "Геометрия", Mark = 5},
+            new StudentMarks {Class = 9, Surname = "Никитин", Initials = "С.А", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 11, Surname = "Рябов", Initials = "С.И", SubjectName = "Алгебра", Mark = 2},
+            new StudentMarks {Class = 9, Surname = "Белов", Initials = "И.С", SubjectName = "Информатика", Mark = 3},
+            new StudentMarks {Class = 10, Surname = "Соколов", Initials = "И.Р", SubjectName = "Алгебра", Mark = 5},
+            new StudentMarks {Class = 9, Surname = "Попов", Initials = "Ф.М", SubjectName = "Геометрия", Mark = 5},
+            new StudentMarks {Class = 7, Surname = "Федотов", Initials = "И.Д", SubjectName = "Информатика", Mark = 4},
         };
 
-        var student = students.GroupBy(x => x.SubjectName).Select(x => new
+        var students = marks.Where(x => x.SubjectName == "Информатика").OrderBy(x => x.Class).GroupBy(x => x.Surname).Select(x => new
         {
-            Count = x.Where(x => x.SubjectName == "Информатика").Count(),
-            Student = x.Where(x => x.Mark >= 4.0)
+            AverageMark = x.Sum(x => x.Mark) / x.Count(),
+            Student = x.Select(x => new {x.Class, x.Surname, x.Initials})
         });
-
-        foreach(var st in student.OrderBy(x => x.Count))
+        Console.Write("      -------------------------------------------------------    \n");
+        Console.WriteLine("\t Класс\t   |\t   Ученик\t|     Средний балл  |");
+        Console.Write("      -------------------------------------------------------    \n");
+        foreach (var s in students)
         {
-            foreach(var s in st.Student.OrderBy(x => x.Class))
+            foreach(var k in s.Student.Distinct())
             {
-                Console.WriteLine($"Класс: {s.Class}, Учащийся: {s.Surname} {s.Initials}, " +
-                    $"Средняя оценка по информатике : {s.Mark} ");
+                Console.Write($"\t   {k.Class}\t   |\t{k.Surname} {k.Initials}\t|");
             }
+            Console.Write($"        {s.AverageMark:F1}\t    |\n");
         }
-        //var st = from students in list
-        //         group students by students.SubjectName into eGroup
-        //         let count = eGroup.Where(x => x.SubjectName == "Информатика").Count()
-        //         let mark = eGroup.Where(x => x.SubjectName == "Информатика").Sum(x => x.Mark)
-        //         select new
-        //         {
-        //             Number = eGroup.Key,
-        //             Insial = eGroup.Where(x => x.Mark >= 4.0)
-        //         };
-        //foreach (var item in st)
-        //{
-        //    foreach (var student in item.Insial.OrderBy(x => x.Class))
-        //    {
-        //        Console.WriteLine($"Класс: {student.Class}, Учащийся: {student.Surname} {student.Initials}, " +
-        //            $"Средняя оценка по информатике : {student.Mark} ");
-        //    }
-        //}
+        Console.Write("      -------------------------------------------------------    \n");
     }
 }
