@@ -12,19 +12,20 @@ internal class Program
         try
         {
             LinqTasks tasks = new LinqTasks();
-            //tasks.Task4();
+            
+            tasks.Task4();
 
-            //tasks.Task16();
+            tasks.Task16();
 
-            //tasks.Task28();
+            tasks.Task28();
 
-            //tasks.Task37();
+            tasks.Task37();
 
-            //tasks.Task40();
+            tasks.Task40();
 
-            //tasks.Task52();
+            tasks.Task52();
 
-            //tasks.Task64();
+            tasks.Task64();
 
             tasks.Task76();
             
