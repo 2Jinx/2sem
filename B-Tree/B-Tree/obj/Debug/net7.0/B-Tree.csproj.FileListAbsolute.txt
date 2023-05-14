@@ -1,0 +1,15 @@
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.csproj.AssemblyReference.cache
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.AssemblyInfoInputs.cache
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.AssemblyInfo.cs
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/B-Tree/B-Tree/bin/Debug/net7.0/B-Tree
+/Users/jinx/Projects/B-Tree/B-Tree/bin/Debug/net7.0/B-Tree.deps.json
+/Users/jinx/Projects/B-Tree/B-Tree/bin/Debug/net7.0/B-Tree.runtimeconfig.json
+/Users/jinx/Projects/B-Tree/B-Tree/bin/Debug/net7.0/B-Tree.dll
+/Users/jinx/Projects/B-Tree/B-Tree/bin/Debug/net7.0/B-Tree.pdb
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.dll
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/refint/B-Tree.dll
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.pdb
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/B-Tree.genruntimeconfig.cache
+/Users/jinx/Projects/B-Tree/B-Tree/obj/Debug/net7.0/ref/B-Tree.dll
