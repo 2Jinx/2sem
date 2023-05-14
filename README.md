@@ -7,3 +7,4 @@
 #### [Delegate](https://github.com/2Jinx/ITIS/tree/main/Delegate "задачи на делегаты") - задачи на делегаты
 #### [LINQ](https://github.com/2Jinx/ITIS/tree/main/LINQ "задачи по LINQ") - задачи по LINQ
 #### [Thread](https://github.com/2Jinx/ITIS/tree/main/Thread "мультипоточность (нахождение максимума из минимумов матрицы по строкам, умножение матриц, Tree Sort)") - мультипоточность (нахождение максимума из минимумов матрицы по строкам, умножение матриц, Tree Sort)
+#### [B-Tree](https://github.com/2Jinx/ITIS/tree/main/B-Tree "семестровая работа по АИСД (B-Tree)") - семестровая работа по АИСД (B-Tree)
