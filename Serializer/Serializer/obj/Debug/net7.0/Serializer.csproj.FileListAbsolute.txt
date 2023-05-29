@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Serializer/Serializer/bin/Debug/net7.0/Serializer
+/Users/jinx/Projects/Serializer/Serializer/bin/Debug/net7.0/Serializer.deps.json
+/Users/jinx/Projects/Serializer/Serializer/bin/Debug/net7.0/Serializer.runtimeconfig.json
+/Users/jinx/Projects/Serializer/Serializer/bin/Debug/net7.0/Serializer.dll
+/Users/jinx/Projects/Serializer/Serializer/bin/Debug/net7.0/Serializer.pdb
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.AssemblyInfo.cs
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.dll
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/refint/Serializer.dll
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.pdb
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/Serializer.genruntimeconfig.cache
+/Users/jinx/Projects/Serializer/Serializer/obj/Debug/net7.0/ref/Serializer.dll
