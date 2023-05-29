@@ -34,6 +34,7 @@ namespace Delegate
                 temp = func(item, temp);
             }
             Console.WriteLine(temp);
+            
             return temp;
         }
 
