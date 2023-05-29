@@ -8,3 +8,7 @@
 #### [LINQ](https://github.com/2Jinx/ITIS/tree/main/LINQ "задачи по LINQ") - задачи по LINQ
 #### [Thread](https://github.com/2Jinx/ITIS/tree/main/Thread "мультипоточность (нахождение максимума из минимумов матрицы по строкам, умножение матриц, Tree Sort)") - мультипоточность (нахождение максимума из минимумов матрицы по строкам, умножение матриц, Tree Sort)
 #### [B-Tree](https://github.com/2Jinx/ITIS/tree/main/B-Tree "семестровая работа по АИСД (B-Tree)") - семестровая работа по АИСД (B-Tree)
+#### [Task_Management_2.0](https://github.com/2Jinx/ITIS/tree/main/Task_Management_2.0 "сериализация приложения на ассоциации") - сериализация приложения на ассоциации
+#### [Reflection](https://github.com/2Jinx/ITIS/tree/main/Reflection "рефлексия") - рефлексия
+#### [Serializer](https://github.com/2Jinx/ITIS/tree/main/Serializer "сериализация и десериализация в json-формате") - сериализация и десериализация в json-формате
+
