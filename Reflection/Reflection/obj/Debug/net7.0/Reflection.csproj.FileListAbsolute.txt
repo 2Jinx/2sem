@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Reflection/Reflection/bin/Debug/net7.0/Reflection
+/Users/jinx/Projects/Reflection/Reflection/bin/Debug/net7.0/Reflection.deps.json
+/Users/jinx/Projects/Reflection/Reflection/bin/Debug/net7.0/Reflection.runtimeconfig.json
+/Users/jinx/Projects/Reflection/Reflection/bin/Debug/net7.0/Reflection.dll
+/Users/jinx/Projects/Reflection/Reflection/bin/Debug/net7.0/Reflection.pdb
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.AssemblyInfo.cs
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.dll
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/refint/Reflection.dll
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.pdb
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/Reflection.genruntimeconfig.cache
+/Users/jinx/Projects/Reflection/Reflection/obj/Debug/net7.0/ref/Reflection.dll
