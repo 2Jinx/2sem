@@ -1,0 +1,17 @@
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.AssemblyInfo.cs
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/bin/Debug/net7.0/Task_Management_2.0
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/bin/Debug/net7.0/Task_Management_2.0.deps.json
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/bin/Debug/net7.0/Task_Management_2.0.runtimeconfig.json
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/bin/Debug/net7.0/Task_Management_2.0.dll
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/bin/Debug/net7.0/Task_Management_2.0.pdb
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.csproj.CopyComplete
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.dll
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/refint/Task_Management_2.0.dll
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.pdb
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/Task_Management_2.0.genruntimeconfig.cache
+/Users/jinx/Projects/Task_Management_2.0/Task_Management_2.0/obj/Debug/net7.0/ref/Task_Management_2.0.dll

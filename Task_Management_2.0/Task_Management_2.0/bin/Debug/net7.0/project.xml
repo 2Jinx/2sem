@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Key>P123</Key>
+  <Title>Sample Project</Title>
+  <InitialCost>1000</InitialCost>
+  <Customer>
+    <Name>ABC Company</Name>
+    <ContactPerson>John Doe</ContactPerson>
+    <ContactPhone>123-456-789</ContactPhone>
+    <ContactEmail>john.doe@abc.com</ContactEmail>
+  </Customer>
+  <Tasks>
+    <Task>
+      <Number>T1</Number>
+      <Description>Task 1 description</Description>
+      <DueDate>2023-06-01T00:00:00</DueDate>
+      <CloseDate>2023-06-02T00:00:00</CloseDate>
+      <HoursSpent>8</HoursSpent>
+      <Billable>true</Billable>
+      <Responsible>
+        <Number>1</Number>
+        <FullName>John Smith</FullName>
+        <Rating>3</Rating>
+        <Position>
+          <Code>DEV</Code>
+          <Name>Developer</Name>
+          <BaseHourlyRate>300</BaseHourlyRate>
+        </Position>
+      </Responsible>
+    </Task>
+    <Task>
+      <Number>T2</Number>
+      <Description>Task 2 description</Description>
+      <DueDate>2023-06-03T00:00:00</DueDate>
+      <CloseDate>2023-06-05T00:00:00</CloseDate>
+      <HoursSpent>12</HoursSpent>
+      <Billable>false</Billable>
+      <Responsible>
+        <Number>2</Number>
+        <FullName>Jane Doe</FullName>
+        <Rating>4</Rating>
+        <Position>
+          <Code>SRDEV</Code>
+          <Name>Senior Developer</Name>
+          <BaseHourlyRate>400</BaseHourlyRate>
+        </Position>
+      </Responsible>
+    </Task>
+  </Tasks>
+</Project>

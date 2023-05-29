@@ -1,0 +1,49 @@
+{
+  "key": "P123",
+  "title": "Sample Project",
+  "initialCost": 1000.0,
+  "customer": {
+    "name": "ABC Company",
+    "contactPerson": "John Doe",
+    "contactPhone": "123-456-789",
+    "contactEmail": "john.doe@abc.com"
+  },
+  "tasks": [
+    {
+      "number": "T1",
+      "description": "Task 1 description",
+      "dueDate": "2023-06-01T00:00:00",
+      "closeDate": "2023-06-02T00:00:00",
+      "hoursSpent": 8.0,
+      "billable": true,
+      "responsible": {
+        "number": 1,
+        "fullName": "John Smith",
+        "rating": 3,
+        "position": {
+          "code": "DEV",
+          "name": "Developer",
+          "baseHourlyRate": 300.0
+        }
+      }
+    },
+    {
+      "number": "T2",
+      "description": "Task 2 description",
+      "dueDate": "2023-06-03T00:00:00",
+      "closeDate": "2023-06-05T00:00:00",
+      "hoursSpent": 12.0,
+      "billable": false,
+      "responsible": {
+        "number": 2,
+        "fullName": "Jane Doe",
+        "rating": 4,
+        "position": {
+          "code": "SRDEV",
+          "name": "Senior Developer",
+          "baseHourlyRate": 400.0
+        }
+      }
+    }
+  ]
+}
