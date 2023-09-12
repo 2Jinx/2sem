@@ -35,7 +35,7 @@
         - [Результат верстки](https://2Jinx.github.io/www/Google/ "Результат верстки")
     - [KTTC](https://github.com/2Jinx/ITIS/tree/main/kttc "KTTC")
         - [Результат верстки](https://2Jinx.github.io/www/kttc/ "Результат верстки")
-    - [KTTC](https://github.com/2Jinx/ITIS/tree/main/Battle.net "KTTC")
+    - [Battle.net](https://github.com/2Jinx/ITIS/tree/main/Battle.net "KTTC")
         - [Результат верстки](https://2Jinx.github.io/www/Battle.net/ "Результат верстки")
 
 
