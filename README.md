@@ -1,14 +1,7 @@
 
-#### [TaskManagement_App](https://github.com/2Jinx/ITIS/tree/main/TaskManagement_App "ООП") - ООП
-#### [List](https://github.com/2Jinx/ITIS/tree/main/List "LinkedList, OrderedLinkedList, GraphicPic, CircularLinkedList") - LinkedList, OrderedLinkedList, GraphicPic, CircularLinkedList
-#### [Yield](https://github.com/2Jinx/ITIS/tree/main/Yield "реализация IEnumerable") - реализация IEnumerable
-#### [Stack](https://github.com/2Jinx/ITIS/tree/main/Stack "реализация Stack и Queue") - реализация Stack и Queue
-#### [TreeSort](https://github.com/2Jinx/ITIS/tree/main/TreeSort "семестровая работа по АИСД") - семестровая работа по АИСД (Tree Sort)
-#### [Delegate](https://github.com/2Jinx/ITIS/tree/main/Delegate "задачи на делегаты") - задачи на делегаты
-#### [LINQ](https://github.com/2Jinx/ITIS/tree/main/LINQ "задачи по LINQ") - задачи по LINQ
-#### [Thread](https://github.com/2Jinx/ITIS/tree/main/Thread "мультипоточность (нахождение максимума из минимумов матрицы по строкам, умножение матриц, Tree Sort)") - мультипоточность (нахождение максимума из минимумов матрицы по строкам, умножение матриц, Tree Sort)
-#### [B-Tree](https://github.com/2Jinx/ITIS/tree/main/B-Tree "семестровая работа по АИСД (B-Tree)") - семестровая работа по АИСД (B-Tree)
-#### [Task_Management_2.0](https://github.com/2Jinx/ITIS/tree/main/Task_Management_2.0 "сериализация приложения на ассоциации") - сериализация приложения на ассоциации
-#### [Reflection](https://github.com/2Jinx/ITIS/tree/main/Reflection "рефлексия") - рефлексия
-#### [Serializer](https://github.com/2Jinx/ITIS/tree/main/Serializer "сериализация и десериализация в json-формате") - сериализация и десериализация в json-формате
+## Содержание
 
+- [Программирование C#](https://github.com/2Jinx/ITIS/tree/main/C%23%20programming "Программирование")
+- [Алгоритмы и структуры данных](https://github.com/2Jinx/ITIS/tree/main/Algorithms%20and%20data%20structures "АИСД")
+- [Основы разработки информационных систем](https://github.com/2Jinx/ITIS/tree/main/Web "ОРИС")
+- [Базы данных](https://github.com/2Jinx/ITIS/tree/main/Database "БД")
