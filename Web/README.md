@@ -11,14 +11,14 @@
 
 ## Google
 
-#### [Проект](https://github.com/2Jinx/www/tree/main/Google "Проект")  
-#### [Результат верстки](https://2Jinx.github.io/www/Google/ "Результат верстки")
+#### [Проект](https://github.com/2Jinx/ITIS/tree/main/Web/Google "Проект")  
+#### [Результат верстки](https://2Jinx.github.io/ITIS/Web/Google/ "Результат верстки")
 
 ---
 
 ## KTTC
 
-#### [Проект](https://github.com/2Jinx/www/tree/main/kttc "Проект")  
-#### [Результат верстки](https://2Jinx.github.io/www/kttc/ "Результат верстки")
+#### [Проект](https://github.com/2Jinx/ITIS/tree/main/Web/kttc "Проект")  
+#### [Результат верстки](https://2Jinx.github.io/ITIS/Web/kttc/ "Результат верстки")
 
 ---
