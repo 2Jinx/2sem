@@ -31,11 +31,11 @@
 ## Основы разработки информационных систем
 
 - [Все проекты](https://github.com/2Jinx/ITIS/tree/main/Web "Все проекты")
-    - [Google](https://github.com/2Jinx/ITIS/tree/main/Google "Google")
+    - [Google](https://github.com/2Jinx/ITIS/tree/main/Web/Google "Google")
         - [Результат верстки](https://2Jinx.github.io/ITIS/Web/Google/ "Результат верстки")
-    - [KTTC](https://github.com/2Jinx/ITIS/tree/main/kttc "KTTC")
+    - [KTTC](https://github.com/2Jinx/ITIS/tree/main/Web/kttc "KTTC")
         - [Результат верстки](https://2Jinx.github.io/ITIS/Web/kttc/ "Результат верстки")
-    - [Battle.net](https://github.com/2Jinx/ITIS/tree/main/Battle.net "KTTC")
+    - [Battle.net](https://github.com/2Jinx/ITIS/tree/main/Web/Battle.net "Battle.net")
         - [Результат верстки](https://2Jinx.github.io/ITIS/Web/Battle.net/ "Результат верстки")
 
 
