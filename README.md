@@ -37,6 +37,7 @@
         - [Результат верстки](https://2Jinx.github.io/ITIS/Web/kttc/ "Результат верстки")
     - [Battle.net](https://github.com/2Jinx/ITIS/tree/main/Web/Battle.net "Battle.net")
         - [Результат верстки](https://2Jinx.github.io/ITIS/Web/Battle.net/ "Результат верстки")
+    - [HTTP Server](https://github.com/2Jinx/ITIS/tree/main/Web/MyHttpServer "HTTP Server")
 
 
 ## Базы данных
