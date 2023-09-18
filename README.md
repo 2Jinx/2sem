@@ -44,5 +44,5 @@
 
 - [Все проекты](https://github.com/2Jinx/ITIS/tree/main/Database "Все проекты")
     - [Домашняя работа №1](https://github.com/2Jinx/ITIS/tree/main/Database/homework_1 "Домашняя работа №1")
-
+    - [Домашняя работа №2](https://github.com/2Jinx/ITIS/tree/main/Database/homework_2 "Домашняя работа №2")
 ---
