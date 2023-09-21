@@ -1,5 +1,4 @@
-﻿using System;
-namespace Configuration.MyHttpServer
+﻿namespace Configuration.MyHttpServer
 {
     public class AppSettings
     {
