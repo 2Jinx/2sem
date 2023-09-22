@@ -12,6 +12,7 @@ namespace MyHttpServer
         private readonly HttpListener _server;
         private readonly ServerConfiguration _configuration;
         private bool _isAlive;
+        private string _contentType;
         private readonly object _lock = new object();
 
         public Server()
@@ -20,6 +21,10 @@ namespace MyHttpServer
             _server = new HttpListener();
         }
 
+        /// <summary>
+        /// Start HTTP Server
+        /// </summary>
+        /// <returns></returns>
         public async Task Start()
         {
             _configuration.Set(_server);
@@ -27,10 +32,8 @@ namespace MyHttpServer
             _isAlive = true;
             Console.WriteLine("The server started working!");
 
-            // Run the server in the background
             var serverTask = ServerProcessAsync();
 
-            // Wait for user input to stop the server
             Console.WriteLine("Type 'stop' and press Enter to stop the server.");
             while (_isAlive)
             {
@@ -41,7 +44,6 @@ namespace MyHttpServer
                 }
             }
 
-            // Wait for the server task to complete
             await serverTask;
         }
 
@@ -62,14 +64,11 @@ namespace MyHttpServer
         {
             while (_isAlive)
             {
-                
                 Console.WriteLine();
                 var context = await _server.GetContextAsync();
                 HandleRequest(context);
             }
         }
-
-        private string _contentType;
 
         private void HandleRequest(HttpListenerContext context)
         {
@@ -79,18 +78,20 @@ namespace MyHttpServer
                 var requestUrl = request.Url.AbsolutePath;
                 Console.WriteLine(requestUrl);
 
-                string responseText = "";
-                string filePath = $"{_configuration.StaticFilesPath}/google/index.html";
+                string responseText = "", filePath = requestUrl;
+                if (filePath.EndsWith("/"))
+                    filePath = _configuration.StaticFilesPath + "/google/index.html";
+
+                if (filePath.StartsWith("/"))
+                    filePath = filePath.Trim('/');
 
                 if (!File.Exists(filePath))
                 {
                     filePath = $"{_configuration.StaticFilesPath}/404.html";
-                    _contentType = "text/html";
                 }
-                else
-                {
-                    _contentType = "text/html";
-                }
+
+                string extention = filePath.Substring(filePath.LastIndexOf('.'));
+                ParseExtention(extention);
 
                 responseText = File.ReadAllText(filePath);
 
@@ -107,6 +108,31 @@ namespace MyHttpServer
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Error handling request: {ex.Message}");
                 Console.ResetColor();
+            }
+        }
+
+        /// <summary>
+        /// Get content type
+        /// </summary>
+        /// <param name="extention"></param>
+        private void ParseExtention(string extention)
+        {
+            switch (extention)
+            {
+                case ".html":
+                    _contentType = "text/html";
+                    break;
+                case ".css":
+                    _contentType = "text/stylesheet";
+                    break;
+                case "jpeg":
+                    _contentType = "image/jpeg";
+                    break;
+                case "png":
+                case "svg":
+                case "ico":
+                    _contentType = "image/" + extention.Substring(1);
+                    break;
             }
         }
     }
