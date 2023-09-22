@@ -1,73 +1,113 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MyHttpServer
 {
     public class Server
     {
-        HttpListener server;
-        ServerConfiguration configuration;
-
-        const string staticFilesPath = "static";
-        const string htmlPath = $"{staticFilesPath}/index.html";
+        private readonly HttpListener _server;
+        private readonly ServerConfiguration _configuration;
+        private bool _isAlive;
+        private readonly object _lock = new object();
 
         public Server()
         {
-            server = new HttpListener();
-            configuration = new ServerConfiguration();
-            configuration.Set(server);
-            server.Start();
-            Console.WriteLine("The server started working!");
+            _configuration = new ServerConfiguration();
+            _server = new HttpListener();
         }
 
-        public void Start()
+        public async Task Start()
+        {
+            _configuration.Set(_server);
+            _server.Start();
+            _isAlive = true;
+            Console.WriteLine("The server started working!");
+
+            // Run the server in the background
+            var serverTask = ServerProcessAsync();
+
+            // Wait for user input to stop the server
+            Console.WriteLine("Type 'stop' and press Enter to stop the server.");
+            while (_isAlive)
+            {
+                if (Console.ReadLine()?.ToLower() == "stop")
+                {
+                    Stop();
+                    _isAlive = false;
+                }
+            }
+
+            // Wait for the server task to complete
+            await serverTask;
+        }
+
+        private void Stop()
+        {
+            lock (_lock)
+            {
+                if (_isAlive)
+                {
+                    _server.Stop();
+                    _server.Close();
+                    Console.WriteLine("The server has been stopped.");
+                }
+            }
+        }
+
+        private async Task ServerProcessAsync()
+        {
+            while (_isAlive)
+            {
+                
+                Console.WriteLine();
+                var context = await _server.GetContextAsync();
+                HandleRequest(context);
+            }
+        }
+
+        private string _contentType;
+
+        private void HandleRequest(HttpListenerContext context)
         {
             try
             {
-                
-                HttpListenerContext context = server.GetContext();
                 HttpListenerRequest request = context.Request;
-
-                if (!Directory.Exists(staticFilesPath))
-                {
-                    Directory.CreateDirectory(staticFilesPath);
-                }
+                var requestUrl = request.Url.AbsolutePath;
+                Console.WriteLine(requestUrl);
 
                 string responseText = "";
-                if (!File.Exists(htmlPath))
+                string filePath = $"{_configuration.StaticFilesPath}/google/index.html";
+
+                if (!File.Exists(filePath))
                 {
-                    responseText = $"Error 404. File {htmlPath} not found!";
+                    filePath = $"{_configuration.StaticFilesPath}/404.html";
+                    _contentType = "text/html";
                 }
                 else
                 {
-                    using (StreamReader reader = new StreamReader(htmlPath))
-                    {
-                        string html = reader.ReadToEnd();
-                        responseText = html;
-                    }
+                    _contentType = "text/html";
                 }
+
+                responseText = File.ReadAllText(filePath);
 
                 HttpListenerResponse response = context.Response;
                 byte[] buffer = Encoding.UTF8.GetBytes(responseText);
 
                 response.ContentLength64 = buffer.Length;
                 response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.ContentType = _contentType;
                 response.Close();
-                Console.WriteLine("Request processed");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Error handling request: {ex.Message}");
+                Console.ResetColor();
             }
-        }
-
-        public void Stop()
-        {
-            server.Stop();
-            server.Close();
-            Console.WriteLine("The server has finished working!");
         }
     }
 }
-
