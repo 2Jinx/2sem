@@ -6,4 +6,6 @@
 
 #### [Домашняя работа № 2](https://github.com/2Jinx/ITIS/tree/main/Database/homework_2 "Домашняя работа № 2")
 
+#### [Домашняя работа № 5](https://github.com/2Jinx/ITIS/tree/main/Database/homework_5 "Домашняя работа № 5")
+
 ---
