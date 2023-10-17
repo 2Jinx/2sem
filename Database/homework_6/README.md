@@ -72,10 +72,6 @@ SELECT * FROM STUDENT WHERE COURSE = 4 AND STIPEND > 300;
 
 ---
 
-
-
----
-
 ```
 SELECT * FROM TEACHER WHERE SALARY + RISE > 1500;
 ```
@@ -90,7 +86,8 @@ SELECT * FROM TEACHER WHERE SALARY + RISE > 1500;
 SELECT * FROM TEACHER WHERE ZVANIE = 'нет' OR ZVANIE = 'д.ф.м.н';
 ```
 
-<img src="images/5.png" alt="SQL запросы" style="border-radius:7px">
+<img src="images/5.png" alt="SQL запросы" style="border-radius:7px">  
+
 ---
 
 ```
