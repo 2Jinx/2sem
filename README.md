@@ -38,7 +38,7 @@
     - [Battle.net](https://github.com/2Jinx/ITIS/tree/main/Web/Battle.net "Battle.net")
         - [Результат верстки](https://2Jinx.github.io/ITIS/Web/Battle.net/ "Результат верстки")
     - [HTTP Server](https://github.com/2Jinx/ITIS/tree/main/Web/MyHttpServer "HTTP Server")
-
+    - [Computer Games](https://github.com/2Jinx/ITIS/tree/main/Web/ComputerGames "Computer Games")
 
 ## Базы данных
 
