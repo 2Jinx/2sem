@@ -10,4 +10,10 @@
 
 #### [Домашняя работа № 7](https://github.com/2Jinx/ITIS/tree/main/Database/homework_6 "Домашняя работа № 7")
 
+#### [Домашняя работа № 8](https://github.com/2Jinx/ITIS/tree/main/Database/homework_8 "Домашняя работа № 8")
+
+## Контрольные работы
+
+#### [Контрольная работа № 1](https://github.com/2Jinx/ITIS/tree/main/Database/test_1 "Контрольная работа работа № 1")
+
 ---
