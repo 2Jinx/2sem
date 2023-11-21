@@ -50,4 +50,5 @@
     - [Домашняя работа № 8](https://github.com/2Jinx/ITIS/tree/main/Database/homework_8 "Домашняя работа № 8")
     - [Контрольная работа № 1](https://github.com/2Jinx/ITIS/tree/main/Database/test_1 "Контрольная работа работа № 1")
     - [Домашняя работа № 9](https://github.com/2Jinx/ITIS/tree/main/Database/homework_9 "Домашняя работа № 9")
+    - [Домашняя работа № 10](https://github.com/2Jinx/ITIS/tree/main/Database/homework_10 "Домашняя работа № 10")
 ---
