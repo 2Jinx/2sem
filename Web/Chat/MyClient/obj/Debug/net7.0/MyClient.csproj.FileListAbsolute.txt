@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Chat/MyClient/bin/Debug/net7.0/MyClient
+/Users/jinx/Projects/Chat/MyClient/bin/Debug/net7.0/MyClient.deps.json
+/Users/jinx/Projects/Chat/MyClient/bin/Debug/net7.0/MyClient.runtimeconfig.json
+/Users/jinx/Projects/Chat/MyClient/bin/Debug/net7.0/MyClient.dll
+/Users/jinx/Projects/Chat/MyClient/bin/Debug/net7.0/MyClient.pdb
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.AssemblyInfo.cs
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.dll
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/refint/MyClient.dll
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.pdb
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/MyClient.genruntimeconfig.cache
+/Users/jinx/Projects/Chat/MyClient/obj/Debug/net7.0/ref/MyClient.dll

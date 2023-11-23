@@ -1,0 +1,15 @@
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.csproj.AssemblyReference.cache
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.AssemblyInfoInputs.cache
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.AssemblyInfo.cs
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.csproj.CoreCompileInputs.cache
+/Users/jinx/Projects/Chat/Chat/bin/Debug/net7.0/Chat
+/Users/jinx/Projects/Chat/Chat/bin/Debug/net7.0/Chat.deps.json
+/Users/jinx/Projects/Chat/Chat/bin/Debug/net7.0/Chat.runtimeconfig.json
+/Users/jinx/Projects/Chat/Chat/bin/Debug/net7.0/Chat.dll
+/Users/jinx/Projects/Chat/Chat/bin/Debug/net7.0/Chat.pdb
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.dll
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/refint/Chat.dll
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.pdb
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/Chat.genruntimeconfig.cache
+/Users/jinx/Projects/Chat/Chat/obj/Debug/net7.0/ref/Chat.dll
