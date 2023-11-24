@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{B786B786-83D4-4895-A0B6-8F674E68AB3E}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PixelBattle/MainPage.xaml.cs">
+    <Files>
+      <File FileName="Server/Program.cs" Line="3" Column="39" />
+      <File FileName="Server/ServerObject.cs" Line="8" Column="30" />
+      <File FileName="PixelBattle/Client.cs" Line="21" Column="54" />
+      <File FileName="PixelBattle/MainPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="PixelBattle/MainPage.xaml" Line="4" Column="45" />
+      <File FileName="PixelBattle/GamePage.xaml" Line="1" Column="1" />
+      <File FileName="PixelBattle/GamePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="PixelBattle/MauiProgram.cs" Line="16" Column="16" />
+      <File FileName="Server/Client.cs" Line="53" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PixelBattle" expanded="True">
+            <Node name="PixelBattle" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Platforms" expanded="True" />
+              <Node name="GamePage.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True">
+                <Node name="MainPage.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Server" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.PixelBattle PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+</Properties>
