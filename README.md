@@ -52,5 +52,11 @@
     - [Контрольная работа № 1](https://github.com/2Jinx/ITIS/tree/main/Database/test_1 "Контрольная работа работа № 1")
     - [Домашняя работа № 9](https://github.com/2Jinx/ITIS/tree/main/Database/homework_9 "Домашняя работа № 9")
     - [Домашняя работа № 10](https://github.com/2Jinx/ITIS/tree/main/Database/homework_10 "Домашняя работа № 10")
+    - [Домашняя работа № 11](https://github.com/2Jinx/ITIS/tree/main/Database/homework_11 "Домашняя работа № 11")
+    - [Домашняя работа № 12](https://github.com/2Jinx/ITIS/tree/main/Database/homework_12 "Домашняя работа № 12")
+    - [Контрольная работа № 2](https://github.com/2Jinx/ITIS/tree/main/Database/test_2 "Контрольная работа работа № 2")
+    - [Домашняя работа № 13](https://github.com/2Jinx/ITIS/tree/main/Database/homework_13 "Домашняя работа № 13")
+    - [Домашняя работа № 14](https://github.com/2Jinx/ITIS/tree/main/Database/homework_14 "Домашняя работа № 14")
+    - [Домашняя работа № 15](https://github.com/2Jinx/ITIS/tree/main/Database/homework_15 "Домашняя работа № 15")
       
 ---
