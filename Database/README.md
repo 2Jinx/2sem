@@ -2,6 +2,8 @@
 
 ## Домашняя работа по базам данных
 
+### 1 Семестр
+
 #### [Домашняя работа № 1](https://github.com/2Jinx/ITIS/tree/main/Database/homework_1 "Домашняя работа № 1")
 
 #### [Домашняя работа № 2-4](https://github.com/2Jinx/ITIS/tree/main/Database/homework_2 "Домашняя работа № 2-4")
@@ -26,6 +28,11 @@
 
 #### [Домашняя работа № 15](https://github.com/2Jinx/ITIS/tree/main/Database/homework_15 "Домашняя работа № 15")
 
+---
+
+### 2 Семестр
+
+#### [Домашняя работа № 1](https://github.com/2Jinx/ITIS/tree/main/Database/homework_2.1 "Домашняя работа № 1")
 ---
 
 ## Контрольные работы
